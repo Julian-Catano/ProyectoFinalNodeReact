@@ -27,8 +27,8 @@ export const consultRecetaById = async (req: Request, res: Response) => {
 
 export const createReceta = async (req: Request, res: Response) => {
   try {
-    let { name, ingredients, description } = req.body;
-    const receta = await Receta.create({ name, ingredients, description });
+    let { name, ingredients, description, userId } = req.body;
+    const receta = await Receta.create({ name, ingredients, description, userId });
     res.status(200).json({
       msg: "Receta creada",
       receta,

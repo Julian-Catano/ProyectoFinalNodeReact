@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/user";
 import { createUsers } from "./users";
+import generateJWT from '../helpers/generate-jwt'
 
 
 export const login = async (req: Request, res: Response) => {
@@ -36,13 +37,9 @@ export const login = async (req: Request, res: Response) => {
       });
     }
 
-    const payload = { id: user.dataValues.id };  // Puedes incluir más información en el payload si es necesario
-    const token = jwt.sign(payload, process.env.JWT_SECRET || 'mi_secreto', { expiresIn: '1h' });
-    //generar token JWT
-    // const token = jwt.sign({ id:user.id }, process.env.JWT_SECRET || 'mi_secreto',{
-    //     expiresIn:'1h'
-    // })
-    
+    // Puedes incluir más información en el payload si es necesario
+    const token = await generateJWT(user.dataValues.id);
+    console.log(token)
 
     return res.status(200).json({
       msg: 'inicio de sesion exitoso',
