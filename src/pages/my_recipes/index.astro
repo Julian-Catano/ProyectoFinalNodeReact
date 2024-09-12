@@ -1,12 +1,6 @@
 ---
-interface Props {
-	title: string;
-}
+import Layout from '../../layouts/Layout.astro';
 
-const { title } = Astro.props;
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import '../estilos/tailwind.css';
 ---
 
 <!doctype html>
@@ -17,13 +11,11 @@ import '../estilos/tailwind.css';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title></title>
 	</head>
-	<body className="flex flex-col min-h-screen">
-		<Header/>
-		
-		<slot />
-		
-		<Footer />
-	</body>
+	<Layout>
+		<body>
+			<h1>Bienvenidos al Perfil</h1>
+		</body>
+	</Layout>
 </html>

@@ -1,0 +1,32 @@
+---
+import '../estilos/tailwind.css';
+---
+
+<footer class="bg-blue-600 text-white py-4">
+  <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+    <!-- Logo o texto -->
+    <div class="text-lg font-bold mb-4 lg:mb-0">
+      <a href="/">Logo</a>
+    </div>
+
+    <!-- Links del footer -->
+    <nav class="flex flex-col lg:flex-row lg:space-x-6 items-center">
+      <a href="/" class="block py-2 px-4 hover:bg-blue-700 rounded-md">Home</a>
+      <a href="/about" class="block py-2 px-4 hover:bg-blue-700 rounded-md">About</a>
+      <a href="/services" class="block py-2 px-4 hover:bg-blue-700 rounded-md">Services</a>
+      <a href="/contact" class="block py-2 px-4 hover:bg-blue-700 rounded-md">Contact</a>
+    </nav>
+
+    <!-- Redes sociales o iconos (opcional) -->
+    <div class="flex mt-4 lg:mt-0 space-x-4">
+      <a href="#" class="hover:text-blue-300">Facebook</a>
+      <a href="#" class="hover:text-blue-300">Twitter</a>
+      <a href="#" class="hover:text-blue-300">Instagram</a>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-sm mt-4">
+    &copy; {new Date().getFullYear()} My Website. Todos los derechos reservados.
+  </div>
+</footer>
